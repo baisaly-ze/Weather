@@ -1,0 +1,310 @@
+body{
+    margin: 0;
+    min-width: 100vh;
+    /* height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-image:url(https://static.vecteezy.com/system/resources/previews/007/118/669/original/abstract-gradient-purple-with-wavy-and-rounded-shape-illustration-free-vector.jpg); */
+    /* background-image: url(https://i.pinimg.com/736x/aa/a5/b5/aaa5b5facd327169f06fcdbe114dfaf6.jpg); */
+    background-image: url(https://i.pinimg.com/736x/b3/eb/25/b3eb25087fad4166abb3938ab62f3b11.jpg);
+    /* background-size:contain; */
+    
+    
+    font-family: sans-serif;
+    padding: 50px 40px 50px 40px;
+    /* background-size: cover; */
+}
+
+*{
+    margin:0;
+    padding: 0;
+}
+
+main {
+    position: relative;
+    width: 400px;
+    height: max-content;
+    min-height: 300px;
+    background-color: rgb(171, 180, 222);
+    box-sizing: border-box;
+    border-radius: 25px;
+    padding: 40px;
+    border: 12px solid transparent; /* Initially transparent border */
+    box-shadow: 0px 30px 80px rgb(31, 34, 32);
+    overflow: hidden;
+    animation: animate-border 4s linear infinite; /* Animation for the border */
+}
+
+@keyframes animate-border {
+    0% {
+        border-top: 12px solid rgb(36, 64, 43); /* Start with top border */
+        border-right: 12px solid transparent; /* Keep the right border hidden */
+        border-bottom: 12px solid transparent; /* Keep the bottom border hidden */
+        border-left: 12px solid transparent; /* Keep the left border hidden */
+    }
+    25% {
+        border-top: 12px solid transparent; /* Hide the top border */
+        border-right: 12px solid rgb(36, 64, 43); /* Show the right border */
+        border-bottom: 12px solid transparent; /* Keep the bottom border hidden */
+        border-left: 12px solid transparent; /* Keep the left border hidden */
+    }
+    50% {
+        border-top: 12px solid transparent; /* Keep the top border hidden */
+        border-right: 12px solid transparent; /* Keep the right border hidden */
+        border-bottom: 12px solid rgb(36, 64, 43); /* Show the bottom border */
+        border-left: 12px solid transparent; /* Keep the left border hidden */
+    }
+    75% {
+        border-top: 12px solid transparent; /* Keep the top border hidden */
+        border-right: 12px solid transparent; /* Keep the right border hidden */
+        border-bottom: 12px solid transparent; /* Keep the bottom border hidden */
+        border-left: 12px solid rgb(36, 64, 43); /* Show the left border */
+    }
+    100% {
+        border-top: 12px solid rgb(36, 64, 43); /* Show the top border */
+        border-right: 12px solid transparent; /* Keep the right border hidden */
+        border-bottom: 12px solid transparent; /* Keep the bottom border hidden */
+        border-left: 12px solid transparent; /* Keep the left border hidden */
+    }
+}
+
+
+
+
+
+
+
+main form{
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 30px;
+}
+
+ main form button,
+ main form input{
+    border: none;
+    background-color:transparent;
+    outline: none;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+main form i{
+    opacity: 0.7;
+
+}
+
+main .result{
+    padding: 20px;
+    text-align: center;
+}
+
+main .result .name{
+    font-weight:600;
+    font-size: xx-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+}
+
+main .temparature img{
+    width: 150px;
+    filter: drop-shadow(
+        0 10px 50px black
+    );
+}
+
+main .temparature figcaption{
+    font-size: 3em;
+}
+
+main .description{
+    padding: 10px 0 30px;
+    font-size: larger;
+    color: rgb(65, 5, 5);
+}
+
+main ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:10px;
+}
+
+main li{
+    background-color: rgb(184, 35, 184);
+    color: aliceblue;
+    border-radius: 10px;
+    padding: 30px 10px;
+    background-image: linear-gradient(
+        to bottom,
+        transparent 50%,
+        #0003 50%
+    );
+    font-weight: bold;
+    font-size: small;
+}
+
+main li i{
+    font-size: 3em;
+    display: block!important;
+    margin: 20px 0px;
+}
+
+main li:nth-child(1){
+    background-color: rgb(219, 124, 146) ;
+}
+main li:nth-child(2){
+    background-color: rgb(93, 166, 211) ;
+}
+main li:nth-child(3){
+    background-color: rgb(228, 161, 18) ;
+}
+
+main.error{
+    animation: errorEffect 0.3s linear 1;
+}
+@keyframes errorEffect{
+    0%{
+        transform: translate(10px, 5px)
+    }
+    25%{
+        transform: translate(-5px, 0)
+    }
+    50%{
+        transform: translate(8px, 2px)
+    }
+    75%{
+        transform: translate(-2px, 5px)
+    }
+    100%{
+        transform: translate(0, 0); 
+    }
+}
+    /* Responsive styles */
+
+/* For smaller screens (mobile devices) */
+@media (max-width: 300px) {
+    body {
+        padding: 30px 20px; /* Reduce padding on mobile */
+    }
+
+    main {
+        padding: 20px; /* Adjust padding for mobile */
+        width: 100%;
+    }
+
+    main form {
+        flex-direction: column; /* Stack the form elements */
+        align-items: center;
+    }
+
+    main form input {
+        width: 50%; /* Make input larger on mobile */
+        margin-bottom: 10px;
+    }
+
+    main form button {
+        width: 50%; /* Make button fit the screen */
+    }
+
+    main .result .name {
+        font-size: 1.5em; /* Reduce font size on mobile */
+    }
+
+    main .temparature figcaption {
+        font-size: 2em;
+    }
+
+    main .description {
+        font-size: 1.2em;
+    }
+
+    main ul {
+        grid-template-columns: 1fr; /* Stack the list items vertically */
+    }
+
+    main li {
+        padding: 15px; /* Adjust padding for small screens */
+    }
+
+    main li i {
+        font-size: 2em;
+    }
+
+
+/* For tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        padding: 40px 30px;
+    }
+
+    main {
+        padding: 25px;
+        width: 100%;
+    }
+
+    main form {
+        flex-direction: row;
+    }
+
+    main form input {
+        width: 70%; /* Make input slightly smaller on tablets */
+    }
+
+    main .result .name {
+        font-size: 1.8em; /* Adjust font size for tablet */
+    }
+
+    main .temparature figcaption {
+        font-size: 2.5em;
+    }
+
+    main .description {
+        font-size: 1.5em;
+    }
+
+    main ul {
+        grid-template-columns: repeat(2, 1fr); /* Adjust grid layout for tablets */
+    }
+
+    main li {
+        padding: 20px; /* Adjust padding */
+    }
+
+    main li i {
+        font-size: 2.5em;
+    }
+}
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 15px;
+    }
+
+    main form input {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    main form button {
+        padding: 8px;
+    }
+
+    main .temparature img {
+        width: 80px; /* Further reduce image size */
+    }
+
+    main ul {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    main li {
+        font-size: 0.8rem;
+        padding: 15px 5px;
+    }
+}
